@@ -14,16 +14,16 @@ Generates ngrams (in this case bigrams and trigrams) from the preprocessed token
 
 Encodes the ngrams extracted from the input text and the preloaded list of standardized terms. The tool calculates cosine similarity scores between the embeddings.
 
-Recommends improvements to the input text by identifying ngrams with high similarity scores to the standardized terms. Suggestions include replacements with corresponding standardized terms, similarity scores, and a visual representation of the matching terms.
+Recommends improvements to the input text by identifying ngrams with high similarity scores to the standardized terms. Suggestions include replacements with corresponding standardized terms, their similarity scores, and a visual representation of the matching terms.
 
 <br>
 
 ### Technologies Used
 
-This tool uses the spaCy library and its medium sized English language model. This library was chosen because of its easy of use, efficiency, and it's designed specifically for production use and development of applications.
-The medium sized English language model was chosen for convenience because it contains word vectors at a modest size (about 40MB) while maintaining great performance, as opposed to the large model which has a significantly larger size or the small model which has no vectors.
+This tool uses the spaCy library and its medium sized English language model. This library was chosen because of its ease of use, efficiency, and it was designed specifically for production use and development of applications.
+The medium sized English language model was chosen for convenience because it contains word vectors at a modest download size (about 40MB) while maintaining great performance, as opposed to the large model which has a significantly larger download size or the small model which has no vectors.
 
-It also uses the DistilBERT model through the Sentence Transformers library for generating embeddings for sentences. It was chosen because it is a good compromise between model size and accuracy. It retains 95% of BERT’s performance while being computationally more efficient and easier to deploy.
+It also uses the DistilBERT model through the Sentence Transformers library to generate embeddings for sentences. It was chosen because it is a good compromise between model size and accuracy. It retains 95% of BERT’s performance while being computationally more efficient and easier to deploy.
 
 <br>
 
@@ -46,16 +46,26 @@ It also uses the DistilBERT model through the Sentence Transformers library for 
 
     python text_engine.py
 
-- Enter the text you want to analyze when prompted.
-- Choose a similarity threshold (between 0.0 and 1.0) to control the sensitivity of the suggestions.
+- Enter the text you want to analyze when prompted:
 
-- Results: The tool will output the input text with suggested improvements based on the similarity to the standardized phrases.
+  ![example_00](https://github.com/rodjoost/text_improvement_engine/assets/66536020/77be5dee-1673-4070-be9d-86e0c419f148)
+
+  
+- Choose a similarity threshold (between 0.0 and 1.0) to control the sensitivity of the suggestions:
+
+  ![example_02](https://github.com/rodjoost/text_improvement_engine/assets/66536020/c6e9ab7a-3fa8-4bdd-a7a1-df58b6a8bdaa)
+
+
+- Results: The tool will output the input text with suggested improvements based on the similarity to the standardized terms:
+
+  ![example_03](https://github.com/rodjoost/text_improvement_engine/assets/66536020/12efb18c-aa33-4d45-83be-82442ecf8f31)
+
 
 <br>
 
 ##### Customize:
 
-- Custom Stopwords: You can experiment with your own custom stopwords for better performance by adding and/or removing words to the custom_stopwords list.
+- Custom stopwords: You can experiment with your own custom stopwords for better performance by adding and/or removing words to the custom_stopwords list.
 
 - Standardized terms: Modify the preloaded_terms list with your own set of standardized terms to tailor the tool to your specific requirements.
 
