@@ -41,6 +41,7 @@ It also uses the DistilBERT model through the Sentence Transformers library to g
 
     python -m spacy download en_core_web_md
 
+<br>
 
 ##### Run the Tool:
 
@@ -60,8 +61,6 @@ It also uses the DistilBERT model through the Sentence Transformers library to g
 
   ![example_03](https://github.com/rodjoost/text_improvement_engine/assets/66536020/12efb18c-aa33-4d45-83be-82442ecf8f31)
 
-
-<br>
 
 ##### Customize:
 
